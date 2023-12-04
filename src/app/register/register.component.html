@@ -1,1 +1,37 @@
-<p>register works!</p>
+<div class="main-register-container">
+    <mat-card class="register-card">
+        <form class="register-form">
+            <mat-card-header class="register-form-header">
+                <mat-card-title>Registration Form</mat-card-title>
+            </mat-card-header>
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput type="firstName" placeholder="Enter your first name" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput type="lastName" placeholder="Enter your last name" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Email Address</mat-label>
+                <input matInput type="email" placeholder="Enter your email" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Enter your password" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Username</mat-label>
+                <input matInput type="username" placeholder="Enter username" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Phone Number</mat-label>
+                <input matInput type="phoneNumber" placeholder="Enter valid phone number" required>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="register-button">Register</button>
+            <div class="register-link">
+                <span class="">Already have an acount? <span class="font-red">Login</span></span>
+            </div>
+        </form>
+    </mat-card>
+</div>

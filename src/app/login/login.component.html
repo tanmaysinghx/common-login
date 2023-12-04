@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="main-login-container">
+    <mat-card class="login-card">
+        <form class="login-form">
+            <mat-card-header class="login-form-header">
+                <mat-card-title>Sign In</mat-card-title>
+              </mat-card-header>
+            <mat-form-field appearance="fill">
+                <mat-label>Email Address</mat-label>
+                <input matInput type="email" placeholder="Enter your email" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Enter your password" required>
+            </mat-form-field>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button mat-raised-button color="primary" class="login-button">Login</button>
+            <div class="register-link">
+                <span class="">Don't have an acount? <span class="font-red">Register</span></span>
+            </div>
+        </form>
+    </mat-card>
+</div>

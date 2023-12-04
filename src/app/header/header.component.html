@@ -1,1 +1,11 @@
-<p>header works!</p>
+<!--Header component-->
+<div class="header-main">
+    <p>
+        <mat-toolbar color="primary" class="header-main">
+            <span>My App</span>
+            <span class="example-spacer"></span>
+            <span class="username" *ngIf="loggedInFlag">Tanmay Singh</span>
+            <button mat-raised-button color="warn" class="example-icon logout-button" *ngIf="loggedInFlag">Logout</button>
+        </mat-toolbar>
+    </p>
+</div>
