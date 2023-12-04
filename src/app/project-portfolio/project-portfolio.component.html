@@ -1,1 +1,20 @@
-<p>project-portfolio works!</p>
+<div class="card-container">
+    <mat-card class="application-card" *ngFor="let app of applications">
+        <mat-card-header>
+            <mat-card-title class="card-title">{{ app.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content">
+            {{ app.description }}
+        </mat-card-content>
+        <div class="card-desc">
+            <div>
+                <span class class="desc-content"><b>App Version:</b> 0.1.1v</span>
+                <span class class="desc-content"><b>Release Date:</b> 28/12/2023</span>
+            </div>
+            <div>
+                <span class class="desc-content"><b>Stage:</b> Beta Testing</span>
+                <span class class="desc-content"><b>Access:</b> Granted</span>
+            </div>
+        </div>
+    </mat-card>
+</div>

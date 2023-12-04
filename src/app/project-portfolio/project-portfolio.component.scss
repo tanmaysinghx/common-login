@@ -1,0 +1,33 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .application-card {
+    width: 400px;
+    margin: 10px;
+    height: 200px;
+    border-bottom: 4px solid #0a2472;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .card-title {
+    font-size: 24px;
+  }
+
+  .card-content {
+    font-size: 14px;
+  }
+
+  .card-desc {
+    padding: 16px;
+    margin-top: 36px;
+  }
+
+  .desc-content {
+    padding-right: 14px;
+  }
+  
