@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,5 +15,18 @@ import {FormsModule} from '@angular/forms';
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
+
+  constructor(
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+
+  }
+
+
+  navigateToLogin() {
+    this.router.navigate(['../login']);
+  }
 
 }

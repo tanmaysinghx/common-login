@@ -30,8 +30,10 @@ export class LoginService {
   }
 
   getUserData(): Observable<any> {
+    var token = sessionStorage.getItem('token');
+    const headers = { 'Authorization': `Bearer ${token}` };
     let assetUrl =  environment.apiUrl + 'current-user';
-    return this.http.get<any>(assetUrl);
+    return this.http.get<any>(assetUrl, {headers});
   }
 
   isUsernameAvailable(username: any): Observable<any> {

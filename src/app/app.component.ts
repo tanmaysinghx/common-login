@@ -5,7 +5,7 @@ import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { LoginService } from './service/login.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ApiInterceptor } from './api.interceptor';
+import { ApiInterceptorService } from './api-interceptor.service';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +13,10 @@ import { ApiInterceptor } from './api.interceptor';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, HttpClientModule],
-  providers: [LoginService,
+  providers: [LoginService, ApiInterceptorService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: ApiInterceptor,
+      useClass: ApiInterceptorService,
       multi: true
     }
   ]
