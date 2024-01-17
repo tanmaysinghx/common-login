@@ -22,3 +22,11 @@
         </form>
     </mat-card>
 </div>
+
+<div class="snackbar-error" *ngIf="errorFlag">
+    {{snackbarMessage}}
+</div>
+
+<div class="snackbar-success" *ngIf="successFlag">
+    {{snackbarMessage}}
+</div>

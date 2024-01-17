@@ -56,3 +56,35 @@ mat-form-field {
     color: red;
     cursor: pointer;
 }
+
+.snackbar-error {
+    min-width: 330px;
+    margin-left: -125px;
+    background-color: #fffbfb;
+    color: #080808;
+    text-align: center;
+    border-radius: 3px;
+    padding: 20px;
+    position: fixed;
+    z-index: 1;
+    right: 0px;
+    bottom: 10px;
+    font-size: 16px;
+    border-left: 5px solid red;
+}
+
+.snackbar-success {
+    min-width: 330px;
+    margin-left: -125px;
+    background-color: #fffbfb;
+    color: #080808;
+    text-align: center;
+    border-radius: 3px;
+    padding: 20px;
+    position: fixed;
+    z-index: 1;
+    right: 0px;
+    bottom: 10px;
+    font-size: 16px;
+    border-left: 5px solid green;
+}

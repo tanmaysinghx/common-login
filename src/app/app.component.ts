@@ -6,13 +6,14 @@ import { FooterComponent } from "./footer/footer.component";
 import { LoginService } from './service/login.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ApiInterceptorService } from './api-interceptor.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, HttpClientModule],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, HttpClientModule, PageNotFoundComponent],
   providers: [LoginService, ApiInterceptorService,
     {
       provide: HTTP_INTERCEPTORS,

@@ -17,18 +17,23 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
+
 export class LoginComponent {
   cmsResponse: any;
   loginForm!: FormGroup;
   loginFormPayload: any;
   authorityKey: any;
+  snackbarMessage: any;
+  errorFlag: boolean = false;
+  successFlag: boolean = false;
 
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
+    this.snackbarMessage = "Login successfull"
     this.getCmsResponse();
     this.createLoginForm();
   }
@@ -59,12 +64,17 @@ export class LoginComponent {
       this.loginService.submitLoginData(this.loginFormPayload).subscribe((data) => {
         if (data) {
           sessionStorage.setItem('token', data.token);
-          this.navigateToDashboard();
+          this.openSnackbar("Login successfull", "success");
           this.getCurrentUser();
+          setTimeout(() => this.navigateToDashboard(), 6000);
         }
-      })
+      }, (error) => {
+        console.log("error", error);
+        this.openSnackbar("Login error", "error");
+      }
+      )
     } else {
-      console.log('Form is invalid');
+      this.openSnackbar("Invalid form", "error");
     }
   }
 
@@ -78,7 +88,6 @@ export class LoginComponent {
     })
   }
 
-  
   navigateToDashboard() {
     this.router.navigate(['../project-portfolio']);
   }
@@ -86,4 +95,16 @@ export class LoginComponent {
   navigateToRegister() {
     this.router.navigate(['../register']);
   }
+
+  openSnackbar(message: any, condition: any) {
+    if (condition == "error") {
+      this.errorFlag = true;
+      setTimeout(() => this.errorFlag = false, 5000);
+    } else if (condition == 'success') {
+      this.successFlag = true;
+      setTimeout(() => this.errorFlag = false, 5000);
+    }
+    this.snackbarMessage = message;
+  }
+
 }
