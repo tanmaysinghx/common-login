@@ -26,6 +26,8 @@ jobs:
       run: docker build -t tanmaysinghx/common-login:${{ github.sha }} .
 
     - name: Publish image to Docker Hub
+      run: docker push tanmaysinghx/common-login:${{ github.sha }}
+
 
   # deploy:
   #   needs: build
