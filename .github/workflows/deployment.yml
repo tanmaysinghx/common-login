@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: CICD Pipeline
 
 on:
   push:
@@ -11,19 +11,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout source
     - uses: actions/checkout@v3
 
+    - name: Build Project
+      run: npm run build
+
+    - name: Jasmine Unit Tests
+      run: ng test
+
+    - name: Login to Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build -t tanmaysinghx/common-login:latest
 
-    # Placeholder for running Jasmine tests
-    - name: Run Jasmine Tests
-      run: docker run my-image-name:$(date +%s) npm test
+    - name: Publish image to Docker Hub
+      run: docker push tanmaysinghx/common-login:latest
 
-    # Placeholder for pushing the image to a Docker registry
-    - name: Push to Docker Registry
-      run: |
-        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push my-image-name:$(date +%s)
+  deploy:
+    needs: build
+    runs-on: aws-ec2
+    # steps:
+    #   - name: Pull Image from Docker Hub
+    #     run: sudo docker pull tanmaysinghx/ts-app-auth-service:latest
 
-    # Additional steps for EC2 deployment would go here
+    #   - name: Delete old container
+    #     run: sudo docker rm -f ts-app-auth-service-container || true
+
+    #   - name: Run Docker container
+    #     run: sudo docker run -d -p 8080:8080 --name ts-app-auth-service-container tanmaysinghx/ts-app-auth-service:latest
