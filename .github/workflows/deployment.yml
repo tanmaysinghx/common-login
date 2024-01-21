@@ -28,7 +28,7 @@ jobs:
       run: ng build
 
     - name: Jasmine Unit Tests
-      run: ng test --watch=false --browsers=ChromeHeadlessCI
+      run: ng test
 
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
