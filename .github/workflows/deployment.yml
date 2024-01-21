@@ -13,8 +13,19 @@ jobs:
     - name: Checkout source
       uses: actions/checkout@v3
 
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20' # specify your Node.js version here
+
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli@17.0.1
+
+    - name: Install Dependencies
+      run: npm install
+
     - name: Build Project
-      run: npm run build
+      run: ng build
 
     - name: Jasmine Unit Tests
       run: ng test --watch=false --browsers=ChromeHeadlessCI
@@ -27,17 +38,3 @@ jobs:
 
     - name: Publish image to Docker Hub
       run: docker push tanmaysinghx/common-login:${{ github.sha }}
-
-
-  # deploy:
-  #   needs: build
-  #   runs-on: aws-ec2
-    # steps:
-    #   - name: Pull Image from Docker Hub
-    #     run: sudo docker pull tanmaysinghx/ts-app-auth-service:latest
-
-    #   - name: Delete old container
-    #     run: sudo docker rm -f ts-app-auth-service-container || true
-
-    #   - name: Run Docker container
-    #     run: sudo docker run -d -p 8080:8080 --name ts-app-auth-service-container tanmaysinghx/ts-app-auth-service:latest
