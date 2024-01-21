@@ -7,12 +7,23 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+    # Placeholder for running Jasmine tests
+    - name: Run Jasmine Tests
+      run: docker run my-image-name:$(date +%s) npm test
+
+    # Placeholder for pushing the image to a Docker registry
+    - name: Push to Docker Registry
+      run: |
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        docker push my-image-name:$(date +%s)
+
+    # Additional steps for EC2 deployment would go here
