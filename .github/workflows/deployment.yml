@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout source
       uses: actions/checkout@v3
@@ -27,12 +26,10 @@ jobs:
       run: docker build -t tanmaysinghx/common-login:${{ github.sha }} .
 
     - name: Publish image to Docker Hub
-      run: docker push tanmaysinghx/common-login:${{ github.sha }}
 
-
-  deploy:
-    needs: build
-    runs-on: aws-ec2
+  # deploy:
+  #   needs: build
+  #   runs-on: aws-ec2
     # steps:
     #   - name: Pull Image from Docker Hub
     #     run: sudo docker pull tanmaysinghx/ts-app-auth-service:latest
