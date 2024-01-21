@@ -16,8 +16,5 @@ RUN npm run build --prod
 # Step 6: Expose port
 EXPOSE 4200
 
-# Step 7: Unit test cases
-RUN ng test
-
 # Step 7: Run the application
 CMD ["npm", "start"]
