@@ -35,7 +35,7 @@ jobs:
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         
     - name: Build the Docker image
-      run: docker build tanmaysinghx/common-login:latest .
+      run: docker build -t tanmaysinghx/common-login:latest .
 
     - name: Publish image to Docker Hub
       run: docker push tanmaysinghx/common-login:latest
