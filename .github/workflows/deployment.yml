@@ -18,16 +18,17 @@ jobs:
       run: npm run build
 
     - name: Jasmine Unit Tests
-      run: ng test
+      run: ng test --watch=false --browsers=ChromeHeadlessCI
 
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         
     - name: Build the Docker image
-      run: docker build -t tanmaysinghx/common-login:latest
+      run: docker build -t tanmaysinghx/common-login:${{ github.sha }} .
 
     - name: Publish image to Docker Hub
-      run: docker push tanmaysinghx/common-login:latest
+      run: docker push tanmaysinghx/common-login:${{ github.sha }}
+
 
   deploy:
     needs: build
