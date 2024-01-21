@@ -34,7 +34,7 @@ jobs:
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         
     - name: Build the Docker image
-      run: docker build -t tanmaysinghx/common-login:${{ github.sha }} .
+      run: docker build -t tanmaysinghx/common-login:latest
 
     - name: Publish image to Docker Hub
-      run: docker push tanmaysinghx/common-login:${{ github.sha }}
+      run: docker push tanmaysinghx/common-login:latest
