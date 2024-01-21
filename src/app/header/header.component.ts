@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatBadgeModule} from '@angular/material/badge';
+import { Component, Inject } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatBadgeModule } from '@angular/material/badge';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,8 +16,40 @@ import {MatBadgeModule} from '@angular/material/badge';
 })
 export class HeaderComponent {
   loggedInFlag: boolean = false;
+  loggedInUser: any;
+  loggedInUserDetails: any;
+  token: any;
+
+  constructor(
+    private router: Router,
+    @Inject(DOCUMENT) private document: Document
+  ) { }
 
   ngOnInit() {
-    this.loggedInFlag = true;
+    this.checkLoginStatus();
+    this.getDataFromSession();
+  }
+
+  checkLoginStatus() {
+    this.token = sessionStorage?.getItem("token") ?? null;
+    if (this.token != null) {
+      this.loggedInFlag = true;
+    } else {
+      this.loggedInFlag = false;
+    }
+  }
+
+  getDataFromSession() {
+    this.loggedInUser = sessionStorage?.getItem("loggedInUser");
+    this.loggedInUserDetails = sessionStorage?.getItem("userData");
+  }
+
+  logout() {
+    sessionStorage.clear();
+    this.navigateToLogin();
+  }
+
+  navigateToLogin() {
+    this.router.navigate(['../login']);
   }
 }

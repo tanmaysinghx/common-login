@@ -29,6 +29,6 @@ export class AppComponent {
 
   }
   ngOnInit(): void {
-
+    console.log("Hello tanmay")
   }
 }
