@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 
@@ -7,8 +7,6 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class LoginService {
-
-  private loginSuccessSubject = new Subject<void>();
 
   constructor(
     private http: HttpClient,
@@ -40,5 +38,6 @@ export class LoginService {
     let assetUrl =  environment.apiUrl + 'is-username-unique/' + username;
     return this.http.get<any>(assetUrl);
   }
+
 }
 

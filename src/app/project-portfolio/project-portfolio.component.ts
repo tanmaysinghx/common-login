@@ -7,14 +7,23 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FooterComponent } from "../footer/footer.component";
 
 @Component({
-    selector: 'app-project-portfolio',
-    standalone: true,
-    templateUrl: './project-portfolio.component.html',
-    styleUrl: './project-portfolio.component.scss',
-    imports: [CommonModule, MatCardModule, FooterComponent]
+  selector: 'app-project-portfolio',
+  standalone: true,
+  templateUrl: './project-portfolio.component.html',
+  styleUrl: './project-portfolio.component.scss',
+  imports: [CommonModule, MatCardModule, FooterComponent]
 })
 export class ProjectPortfolioComponent {
 
+  constructor() { }
+
+  ngOnInit() {
+    
+  }
+
+  refresh() {
+    window.location.reload();
+  }
 
   applications = [
     { name: 'Citrix Gateway', description: 'Description for Citrix Gateway' },

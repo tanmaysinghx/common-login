@@ -33,9 +33,17 @@ export class LoginComponent {
   ) { }
 
   ngOnInit() {
+    this.checkLoginStatus();
     this.snackbarMessage = "Login successfull"
     this.getCmsResponse();
     this.createLoginForm();
+  }
+
+  checkLoginStatus() {
+    const token = sessionStorage.getItem('token');
+    if (token != null) {
+      this.navigateToDashboard();
+    }
   }
 
   getCmsResponse() {
@@ -66,7 +74,7 @@ export class LoginComponent {
           sessionStorage.setItem('token', data.token);
           this.openSnackbar("Login successfull", "success");
           this.getCurrentUser();
-          setTimeout(() => this.navigateToDashboard(), 6000);
+          setTimeout(() => this.navigateToDashboard(), 5000);
         }
       }, (error) => {
         console.log("error", error);
