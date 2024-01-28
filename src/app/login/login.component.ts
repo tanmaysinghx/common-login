@@ -6,9 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Router } from '@angular/router';
 import { LoginService } from '../service/login.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -34,7 +33,6 @@ export class LoginComponent {
 
   ngOnInit() {
     this.checkLoginStatus();
-    this.snackbarMessage = "Login successfull"
     this.getCmsResponse();
     this.createLoginForm();
   }

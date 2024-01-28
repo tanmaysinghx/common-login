@@ -7,6 +7,7 @@ import { LoginService } from './service/login.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ApiInterceptorService } from './api-interceptor.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MainService } from './service/main.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, HttpClientModule, PageNotFoundComponent],
-  providers: [LoginService, ApiInterceptorService,
+  providers: [LoginService, ApiInterceptorService, MainService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiInterceptorService,
@@ -29,6 +30,6 @@ export class AppComponent {
 
   }
   ngOnInit(): void {
-    console.log("Hello tanmay")
+  
   }
 }

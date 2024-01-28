@@ -1,0 +1,49 @@
+{
+    "userId": 1234,
+    "userName": "john_doe",
+    "accessList": [
+      {
+        "applicationId": 1012,
+        "appName": "E-Commerce Platform",
+        "role": "ADMIN",
+        "access": true
+      },
+      {
+        "applicationId": 2859,
+        "appName": "Human Resource Management System",
+        "role": "HR",
+        "access": true
+      },
+      {
+        "applicationId": 3891,
+        "appName": "Social Media Platform",
+        "role": "USER",
+        "access": true
+      },
+      {
+        "applicationId": 1467,
+        "appName": "Project Management Tool",
+        "role": "SUPERUSER",
+        "access": false
+      },
+      {
+        "applicationId": 5302,
+        "appName": "Online Learning Platform",
+        "role": "QA",
+        "access": true
+      },
+      {
+        "applicationId": 1502,
+        "appName": "E-Book Reader",
+        "role": "USER",
+        "access": false
+      },
+      {
+        "applicationId": 7226,
+        "appName": "Inventory Management System",
+        "role": "QA2",
+        "access": true
+      }
+    ]
+  }
+  

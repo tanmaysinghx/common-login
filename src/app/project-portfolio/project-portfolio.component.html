@@ -1,21 +1,36 @@
 <div class="card-container">
-    <mat-card class="application-card" *ngFor="let app of applications">
+    <mat-card class="application-card card-top-border-not-granted"
+        [ngClass]="data.access ? 'card-top-border-granted' : 'card-top-border-not-granted'"
+        *ngFor="let data of apiData" (click)="navigateToApplication($event, data)">
         <mat-card-header>
-            <mat-card-title class="card-title">{{ app.name }}</mat-card-title>
+            <mat-card-title class="card-title">{{ data.appName }} </mat-card-title>
         </mat-card-header>
         <mat-card-content class="card-content">
-            {{ app.description }}
+            {{ data.description }}
         </mat-card-content>
         <div class="card-desc">
             <div>
-                <span class class="desc-content"><b>App Version:</b> 0.1.1v</span>
-                <span class class="desc-content"><b>Release Date:</b> 28/12/2023</span>
+                <span class class="desc-content"><b>App Id:</b> {{ data.applicationId }}</span>
+                <span class class="desc-content"><b>App Version:</b> {{ data.version }}v</span>
+                <span class class="desc-content"><b>Platform:</b> {{ data.platform }}</span>
             </div>
             <div>
-                <span class class="desc-content"><b>Stage:</b> Beta Testing</span>
-                <span class class="desc-content"><b>Access:</b> Granted</span>
+                <span class class="desc-content"><b>Stage:</b> {{ data.stage }}</span>
+                <span class class="desc-content"><b>Environment:</b> {{ data.environment }}</span>
+            </div>
+            <div>
+                <span class class="desc-content"><b>Access List:</b> {{ data.accessList }}</span>
+            </div>
+            <div>
+                <span class class="desc-content"><b>Technology:</b> {{ data.technology }}</span>
             </div>
         </div>
     </mat-card>
 </div>
-<app-footer></app-footer>
+<div class="snackbar-error" *ngIf="errorFlag">
+    {{snackbarMessage}}
+</div>
+
+<div class="snackbar-success" *ngIf="successFlag">
+    {{snackbarMessage}}
+</div>

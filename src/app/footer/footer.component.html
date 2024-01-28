@@ -1,4 +1,8 @@
-<footer class="footer">
-    <p class="footer-content">© 2023 Copyright: Tanmay Singh</p>
-  </footer>
-  
+<!--Common footer-->
+<footer class="footer" *ngIf="this.apiResponse && !this.infoFlag">
+  <p class="footer-content">© 2024 Copyright: Tanmay Singh | <span class="version">App version: {{ version }}</span></p>
+</footer>
+
+<footer class="information-message" *ngIf="this.apiResponse && this.infoFlag">
+  <p class="footer-content"> {{ informationMessage }}</p>
+</footer>
