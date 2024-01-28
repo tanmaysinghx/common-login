@@ -28,7 +28,7 @@ export class LoginService {
   }
 
   getUserData(): Observable<any> {
-    var token = sessionStorage.getItem('token');
+    let token = sessionStorage.getItem('token');
     const headers = { 'Authorization': `Bearer ${token}` };
     let assetUrl =  environment.apiUrl + 'current-user';
     return this.http.get<any>(assetUrl, {headers});
@@ -36,6 +36,11 @@ export class LoginService {
 
   isUsernameAvailable(username: any): Observable<any> {
     let assetUrl =  environment.apiUrl + 'is-username-unique/' + username;
+    return this.http.get<any>(assetUrl);
+  }
+
+  getAuthKeyValues(): Observable<any> {
+    let assetUrl =  'assets/data/authorizationKeys.json';
     return this.http.get<any>(assetUrl);
   }
 

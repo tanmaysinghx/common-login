@@ -1,0 +1,25 @@
+<div class="main-auth-container" *ngIf="authForm">
+    <mat-card class="auth-card">
+        <form class="auth-form" [formGroup]="authForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Authorization key</mat-label>
+                <input matInput placeholder="Authorization key" formControlName="authorizationKey">
+            </mat-form-field>
+            <div class="border-class"> Or</div>
+            <mat-form-field appearance="outline">
+                <mat-label>Token</mat-label>
+                <input matInput placeholder="Token" formControlName="token">
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="auth-button" (click)="submitAuthForm()">Login using secret
+                key / token</button>
+        </form>
+    </mat-card>
+</div>
+
+<div class="snackbar-error" *ngIf="errorFlag">
+    {{snackbarMessage}}
+</div>
+
+<div class="snackbar-success" *ngIf="successFlag">
+    {{snackbarMessage}}
+</div>

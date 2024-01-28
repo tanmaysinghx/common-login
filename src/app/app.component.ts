@@ -8,13 +8,14 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ApiInterceptorService } from './api-interceptor.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainService } from './service/main.service';
+import { AuthKeyLoginComponent } from './auth-key-login/auth-key-login.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, HttpClientModule, PageNotFoundComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, HttpClientModule, PageNotFoundComponent, AuthKeyLoginComponent],
   providers: [LoginService, ApiInterceptorService, MainService,
     {
       provide: HTTP_INTERCEPTORS,

@@ -54,4 +54,8 @@ export class HeaderComponent {
     this.router.navigate(['../login']);
   }
 
+  navigateToAuthLogin() {
+    this.router.navigate(['../authorization-key-login']);
+  }
+
 }

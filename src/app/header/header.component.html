@@ -6,6 +6,7 @@
             <span class="example-spacer"></span>
             <span class="username" *ngIf="loggedInFlag">{{loggedInUser}}</span>
             <button mat-raised-button color="warn" class="example-icon logout-button" *ngIf="loggedInFlag" (click)="logout()">Logout</button>
+            <button mat-raised-button color="accent" class="example-icon auth-button" *ngIf="!loggedInFlag" (click)="navigateToAuthLogin()">Auth key login</button>
             <button mat-raised-button color="accent" class="example-icon logout-button" *ngIf="!loggedInFlag" (click)="navigateToLogin()">Login</button>
         </mat-toolbar>
     </p>
