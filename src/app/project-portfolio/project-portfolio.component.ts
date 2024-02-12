@@ -20,6 +20,7 @@ export class ProjectPortfolioComponent {
   errorFlag: boolean = false;
   successFlag: boolean = false;
   snackbarMessage: any;
+  jwtToken: any;
 
   constructor(
     private mainService: MainService,
@@ -27,6 +28,11 @@ export class ProjectPortfolioComponent {
 
   ngOnInit() {
     this.getApiData();
+    this.getDataFromSession();
+  }
+
+  getDataFromSession() {
+    this.jwtToken = localStorage.getItem("jwt-token");
   }
 
   getApiData() {
@@ -53,7 +59,9 @@ export class ProjectPortfolioComponent {
   navigateToApplication(event: any, data: any) {
     if (data.access) {
       this.openSnackbar("Application is opening...", "success");
-      setTimeout(() => window.open(data.appUrl, ''), 5000);
+      let appURL = data.appUrl + this.jwtToken;
+      console.log(appURL)
+      setTimeout(() => window.open(appURL, ''), 5000);
     } else if (!data.access) {
       this.openSnackbar("Access is required!", "error");
     }

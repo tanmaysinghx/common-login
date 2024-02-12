@@ -1,6 +1,18 @@
 {
     "data": [
       {
+        "applicationId": 2508,
+        "appName": "Dynamo Ticketing Tool",
+        "description": "A ticketing tool to manage and register defects and tasks.",
+        "version": "0.0.1",
+        "stage": "WIP",
+        "accessList": "ADMIN, USER, SUPERUSER, OWNER",
+        "environment": "LOCAL",
+        "technology": "Angular 15, Spring 3.2.2, SQL, AWS, Jenkins",
+        "appUrl": "http://localhost:2508/dashboard/",
+        "platform": "Web"
+      },
+      {
         "applicationId": 1012,
         "appName": "E-Commerce Platform",
         "description": "A comprehensive e-commerce solution for online shopping.",

@@ -3,22 +3,28 @@
     "userName": "john_doe",
     "accessList": [
       {
+        "applicationId": 2508,
+        "appName": "Dynamo Ticketing Tool",
+        "role": "SUPERUSER",
+        "access": true
+      },
+      {
         "applicationId": 1012,
         "appName": "E-Commerce Platform",
         "role": "ADMIN",
-        "access": true
+        "access": false
       },
       {
         "applicationId": 2859,
         "appName": "Human Resource Management System",
         "role": "HR",
-        "access": true
+        "access": false
       },
       {
         "applicationId": 3891,
         "appName": "Social Media Platform",
         "role": "USER",
-        "access": true
+        "access": false
       },
       {
         "applicationId": 1467,
@@ -30,7 +36,7 @@
         "applicationId": 5302,
         "appName": "Online Learning Platform",
         "role": "QA",
-        "access": true
+        "access": false
       },
       {
         "applicationId": 1502,
@@ -42,7 +48,7 @@
         "applicationId": 7226,
         "appName": "Inventory Management System",
         "role": "QA2",
-        "access": true
+        "access": false
       }
     ]
   }

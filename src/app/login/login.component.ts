@@ -70,6 +70,7 @@ export class LoginComponent {
       this.loginService.submitLoginData(this.loginFormPayload).subscribe((data) => {
         if (data) {
           sessionStorage.setItem('token', data.token);
+          localStorage.setItem('jwt-token', data.token);
           this.openSnackbar("Login successfull", "success");
           this.getCurrentUser();
           setTimeout(() => this.navigateToDashboard(), 5000);
