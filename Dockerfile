@@ -14,7 +14,7 @@ RUN npm install
 RUN npm run build --prod
 
 # Step 6: Expose port
-EXPOSE 4200
+EXPOSE 2508
 
 # Step 7: Run the application
 CMD ["npm", "start"]

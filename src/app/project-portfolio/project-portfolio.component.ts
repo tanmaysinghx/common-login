@@ -60,7 +60,7 @@ export class ProjectPortfolioComponent {
     if (data.access) {
       this.openSnackbar("Application is opening...", "success");
       let appURL = data.appUrl + this.jwtToken;
-      console.log(appURL)
+      console.log(appURL);
       setTimeout(() => window.open(appURL, ''), 5000);
     } else if (!data.access) {
       this.openSnackbar("Access is required!", "error");

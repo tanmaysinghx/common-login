@@ -25,7 +25,7 @@ import { AuthKeyLoginComponent } from './auth-key-login/auth-key-login.component
   ]
 })
 export class AppComponent {
-  title = 'common-login';
+  title = 'sso-app-ui-2508';
 
   constructor(private loginService: LoginService) {
 

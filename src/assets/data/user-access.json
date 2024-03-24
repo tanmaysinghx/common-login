@@ -3,7 +3,7 @@
     "userName": "john_doe",
     "accessList": [
       {
-        "applicationId": 2508,
+        "applicationId": 1727,
         "appName": "Dynamo Ticketing Tool",
         "role": "SUPERUSER",
         "access": true

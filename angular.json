@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "common-login": {
+    "sso-app-ui-2508": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/common-login",
+            "outputPath": "dist/sso-app-ui-2508",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "common-login:build:production"
+              "buildTarget": "sso-app-ui-2508:build:production"
             },
             "development": {
-              "buildTarget": "common-login:build:development"
+              "buildTarget": "sso-app-ui-2508:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "common-login:build"
+            "buildTarget": "sso-app-ui-2508:build"
           }
         },
         "test": {

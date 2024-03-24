@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'common-login' title`, () => {
+  it(`should have the 'sso-app-ui-2508' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('common-login');
+    expect(app.title).toEqual('sso-app-ui-2508');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, common-login');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, sso-app-ui-2508');
   });
 });

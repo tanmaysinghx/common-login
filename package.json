@@ -1,5 +1,5 @@
 {
-  "name": "common-login",
+  "name": "sso-app-ui-2508",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:common-login": "node dist/common-login/server/server.mjs"
+    "serve:ssr:sso-app-ui-2508": "node dist/sso-app-ui-2508/server/server.mjs"
   },
   "private": true,
   "dependencies": {

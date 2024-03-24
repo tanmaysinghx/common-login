@@ -9,7 +9,7 @@
         "accessList": "ADMIN, USER, SUPERUSER, OWNER",
         "environment": "LOCAL",
         "technology": "Angular 15, Spring 3.2.2, SQL, AWS, Jenkins",
-        "appUrl": "http://localhost:2508/dashboard/",
+        "appUrl": "http://localhost:1727/dashboard/",
         "platform": "Web"
       },
       {
